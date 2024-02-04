@@ -14,111 +14,121 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = MyAppHelperFunctions.isDarkMode(context);
 
-    return SingleChildScrollView(
-      padding: MyAppSpaces.paddingwithbarheight,
-      child: Column(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image(
-                height: 150,
-                image: AssetImage(
-                    dark ? MyAppImages.lightAppLogo : MyAppImages.darkAppLogo),
-              ),
-              Text(
-                MyAppString.loginTitle,
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-              SizedBox(
-                height: MyAppSizes.sm,
-              ),
-              Text(
-                MyAppString.loginTitle,
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-            ],
-          ),
-          Form(
-              child: Padding(
-            padding:
-                EdgeInsets.symmetric(vertical: 16),
-            child: Column(
+    return Scaffold(
+      body: SingleChildScrollView(
+        padding: MyAppSpaces.paddingwithbarheight,
+        child: Column(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //email
-                TextFormField(
-                  decoration: InputDecoration(
-                      prefixIcon: Icon(Iconsax.direct_right),
-                      labelText: MyAppString.email),
+                Image(
+                  height: 150,
+                  image: AssetImage(
+                      dark ? MyAppImages.lightAppLogo : MyAppImages.darkAppLogo),
+                ),
+                Text(
+                  MyAppString.loginTitle,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(
-                  height: MyAppSizes.spaceBtwInputFields,
+                  height: MyAppSizes.sm,
                 ),
-
-                //password
-                TextFormField(
-                  decoration: InputDecoration(
-                      suffixIcon: Icon(Iconsax.eye_slash),
-                      labelText: MyAppString.password),
+                Text(
+                  MyAppString.loginSubTitle,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
-                SizedBox(
-                  height: MyAppSizes.spaceBtwInputFields,
-                ),
-
-                //remember password
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    //remember
-
-                    Checkbox(value: true, onChanged: (value) {}),
-                    Text(MyAppString.rememberMe),
-
-                    //forget password
-
-                    TextButton(
-                        onPressed: () {},
-                        child: Text(MyAppString.forgetPassword))
-                  ],
-                ),
-                SizedBox(
-                  height: MyAppSizes.spaceBtwSections,
-                ),
-
-                ///sign in button
-
-                SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                        onPressed: () {}, child: Text(MyAppString.signIn))),
-
-                SizedBox(
-                    width: double.infinity,
-                    child: OutlinedButton(
-                        onPressed: () {},
-                        child: Text(MyAppString.createAccount))),
               ],
             ),
-          )),
+      
+            ///login
+            Form(
+                child: Padding(
+              padding:
+                  EdgeInsets.symmetric(vertical: 16),
+              child: Column(
+                children: [
+                  //email
+                  TextFormField(
+                    decoration: InputDecoration(
+                        prefixIcon: Icon(Iconsax.direct_right),
+                        labelText: MyAppString.email),
+                  ),
+      
+      
+                  SizedBox(
+                    height: MyAppSizes.spaceBtwInputFields,
+                  ),
+      
+                  //password
+                  TextFormField(
+                    decoration: InputDecoration(
+                        suffixIcon: Icon(Iconsax.eye_slash),
+                        labelText: MyAppString.password),
+                  ),
+                  SizedBox(
+                    height: MyAppSizes.spaceBtwInputFields,
+                  ),
+      
+                  //remember password
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      //remember
+      
+                      Checkbox(value: true, onChanged: (value) {}),
+                      Text(MyAppString.rememberMe),
+      
+                      //forget password
+      
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(MyAppString.forgetPassword))
+                    ],
+                  ),
+                  SizedBox(
+                    height: MyAppSizes.spaceBtwSections,
+                  ),
+      
+                  ///sign in button
+      
+                  SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                          onPressed: () {}, child: Text(MyAppString.signIn))),
 
-          ///divider
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Divider(
-                  color: dark ? MyAppColors.darkGrey : MyAppColors.grey,
-                  thickness: 0.5,
-                  indent: 60,
-                  endIndent: 5,
-                ),
-              )
-            ],
-          )
+                  SizedBox(height: MyAppSizes.spaceBtwInputFields,),
+                  SizedBox(
+                      width: double.infinity,
 
-          ///footer
-        ],
+                      child: OutlinedButton(
+                          onPressed: () {},
+                          child: Text(MyAppString.createAccount))),
+                ],
+              ),
+            )),
+      
+            ///divider
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Divider(
+                    color: dark ? MyAppColors.darkGrey : MyAppColors.grey,
+                    thickness: 0.5,
+                    indent: 60,
+                    endIndent: 5,
+                  ),
+                )
+              ],
+            )
+      
+            ///footer
+          ],
+        ),
       ),
     );
-  }
+
+
+ }
 }
