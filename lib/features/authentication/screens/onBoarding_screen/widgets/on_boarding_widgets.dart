@@ -103,7 +103,7 @@ class on_boarding_next extends StatelessWidget {
 
           style: ElevatedButton.styleFrom(
 
-              shape: CircleBorder() ,backgroundColor: dark?MyAppColors.primaryColor:Colors.black),
+              shape: CircleBorder() ,backgroundColor: dark?MyAppColors.primary:Colors.black),
           onPressed: (){
 
             OnBoardingController.instance.nextPage();

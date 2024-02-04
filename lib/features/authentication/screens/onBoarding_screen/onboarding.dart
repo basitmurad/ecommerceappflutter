@@ -21,36 +21,40 @@ class OnboardingScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-
           PageView(
-            controller:  controller.pageController,
+            controller: controller.pageController,
             onPageChanged: controller.updatePageIndicator,
             children: const [
+              onBoardingPages(
 
-              onBoardingPages(imagePath: MyAppImages.onBoardingImage1
-                  ,title: MyAppString.onBoarding1
-                  ,subTitle:MyAppString.onBoarding11),
-              onBoardingPages(imagePath: MyAppImages.onBoardingImage2
-                  ,title: MyAppString.onBoarding2
-                  ,subTitle:MyAppString.onBoarding22),
-              onBoardingPages(imagePath: MyAppImages.onBoardingImage3,
-                  title: MyAppString.onBoarding3
-                  ,subTitle:MyAppString.onBoarding33),
+                  imagePath: MyAppImages.onBoardingImage1,
+                  title: MyAppString.onBoarding1,
+                  subTitle: MyAppString.onBoarding11
+              ),
+              onBoardingPages(
+
+                  imagePath: MyAppImages.onBoardingImage2,
+                  title: MyAppString.onBoarding2,
+                  subTitle: MyAppString.onBoarding22
+
+              ),
+              onBoardingPages(
+
+                  imagePath: MyAppImages.onBoardingImage3,
+                  title: MyAppString.onBoarding3,
+                  subTitle: MyAppString.onBoarding33
+
+              ),
             ],
           ),
           OnboardingSkip(),
-
           on_boarding_dot_navigation(),
-          
           on_boarding_next()
-          
         ],
       ),
     );
   }
 }
-
-
 
 // class OnboardingSkip extends StatelessWidget {
 //   const OnboardingSkip({
