@@ -1,6 +1,14 @@
 class MyAppString{
 
-  static const String onBoarding1 = "Choose you product";
+  // -- GLOBAL Texts
+  static const String and = "and";
+  static const String skip = "Skip";
+  static const String done = "Done";
+  static const String submit = "Submit";
+  static const String appName = "T-Store";
+  static const String tContinue = "Continue";
+
+      static const String onBoarding1 = "Choose you product";
   static const String onBoarding2 = "Select Payment Method";
   static const String onBoarding3 = "Deliver at your step";
 

@@ -1,5 +1,7 @@
+import 'package:ecommerceapp/features/authentication/screens/sigup_screen/signUp_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../utils/constants/MyAppSizes.dart';
@@ -72,7 +74,7 @@ class MyAppLoginForm extends StatelessWidget {
                   width: double.infinity,
 
                   child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () =>Get.to(() => const SiginUpScreen()),
                       child: const Text(MyAppString.createAccount))),
             ],
           ),
