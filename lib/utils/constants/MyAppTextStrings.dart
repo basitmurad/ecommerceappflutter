@@ -60,6 +60,6 @@ class MyAppString{
 
   // -- Home
   static const String homeAppbarTitle = "Good day for shopping";
-  static const String homeAppbarSubTitle = "Mehboob Alam";
+  static const String homeAppbarSubTitle = "Basit Murad";
 
 }
