@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import '../../../../utils/constants/MyAppColor.dart';
-import '../../curved_edges/curved_edges_widget.dart';
+import '../curved_edges/curved_edges_widget.dart';
 import 'AppCircularContainer.dart';
 
 class MyAppPrimaryHeaderContainer extends StatelessWidget {
   const MyAppPrimaryHeaderContainer({
-    super.key, required this.child,
+    super.key,
+    required this.child,
   });
 
   final Widget child;
@@ -33,7 +34,8 @@ class MyAppPrimaryHeaderContainer extends StatelessWidget {
                   child: AppCircularContainer(
                     backGroundColor:
                     MyAppColors.textWhite.withOpacity(0.1),
-                  ))
+                  )),
+              child,
             ],
           ),
         ),
