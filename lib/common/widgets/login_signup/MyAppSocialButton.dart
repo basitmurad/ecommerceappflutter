@@ -24,7 +24,7 @@ class MyAppLoginSocialButton extends StatelessWidget {
           child: IconButton(onPressed: (){},icon: Image(
             height: MyAppSizes.iconMd,
             width: MyAppSizes.iconMd,
-            image: AssetImage(MyAppImages.facc),
+            image: AssetImage(MyAppImages.facebook),
           ),),
         ),
 
@@ -37,7 +37,7 @@ class MyAppLoginSocialButton extends StatelessWidget {
           child: IconButton(onPressed: (){},icon: Image(
             height: MyAppSizes.iconMd,
             width: MyAppSizes.iconMd,
-            image: AssetImage(MyAppImages.goo),
+            image: AssetImage(MyAppImages.google),
           ),),
         ),
 

@@ -4,9 +4,9 @@ import '../../../../utils/constants/MyAppColor.dart';
 class AppCircularContainer extends StatelessWidget {
   const AppCircularContainer({
     super.key,
-    this.width = 350,
-    this.height =350,
-    this.radius =350,
+    this.width = 380,
+    this.height =380,
+    this.radius =380,
     this.padding = 0,
     this.child,
     this.backGroundColor = MyAppColors.white,

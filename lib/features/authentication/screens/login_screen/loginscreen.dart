@@ -28,15 +28,15 @@ class LoginScreen extends StatelessWidget {
               MyAppLoginHeader(dark: dark),
 
               ///login
-              MyAppLoginForm(),
+              const MyAppLoginForm(),
 
               ///divider
               MyAppLoginDivider(dark: dark),
 
               ///footer
 
-              SizedBox(height: MyAppSizes.spaceBtwItems,),
-              MyAppLoginSocialButton()
+              const SizedBox(height: MyAppSizes.spaceBtwItems,),
+              const MyAppLoginSocialButton()
             ],
           ),
         ),

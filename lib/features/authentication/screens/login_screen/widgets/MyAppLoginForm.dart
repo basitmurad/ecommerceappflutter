@@ -16,6 +16,8 @@ class MyAppLoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isChecked = false;
+
     return Form(
         child: Padding(
           padding:
@@ -34,7 +36,7 @@ class MyAppLoginForm extends StatelessWidget {
                 height: MyAppSizes.spaceBtwInputFields,
               ),
 
-              //password
+              ///password
               TextFormField(
                 decoration: const InputDecoration(
                     suffixIcon: Icon(Iconsax.eye_slash),
@@ -48,12 +50,16 @@ class MyAppLoginForm extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  //remember
+                  ///remember
 
-                  Checkbox(value: true, onChanged: (value) {}),
+                  Checkbox(value: isChecked, onChanged: (newvalue) {
+
+
+
+                  }),
                   const Text(MyAppString.rememberMe),
 
-                  //forget password
+                  ///forget password
 
                   TextButton(
                       onPressed: () =>Get.to(()=>ForgetPassword()),
