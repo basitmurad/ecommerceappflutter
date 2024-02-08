@@ -23,6 +23,7 @@ class MyAppVerticalImageText extends StatelessWidget {
   final void Function()? ontap;
 
 
+
   @override
   Widget build(BuildContext context) {
 
