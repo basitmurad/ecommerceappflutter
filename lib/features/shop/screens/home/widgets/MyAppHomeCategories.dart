@@ -32,7 +32,9 @@ class MyAppHomeCategories extends StatelessWidget {
           // Get the image and title data for the current index
           String image = categoryData[index]["image"];
           String string = categoryData[index]["title"];
-          return   MyAppVerticalImageText(image:  image, title: string , ontap: (){}, textColor: Colors.white,);
+          return   MyAppVerticalImageText(image:  image, title: string , ontap: (){
+
+          }, textColor: Colors.white,);
 
         },
       ),

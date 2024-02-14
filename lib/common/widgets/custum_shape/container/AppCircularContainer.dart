@@ -4,18 +4,20 @@ import '../../../../utils/constants/MyAppColor.dart';
 class AppCircularContainer extends StatelessWidget {
   const AppCircularContainer({
     super.key,
-    this.width = 380,
-    this.height =380,
-    this.radius =380,
+    this.width = 400,
+    this.height =400,
+    this.radius =400,
     this.padding = 0,
     this.child,
     this.backGroundColor = MyAppColors.white,
+    this.margin,
   });
 
   final double? width;
   final double? height;
   final double radius  ;
   final double padding;
+  final EdgeInsets? margin;
   final Widget? child;
   final Color backGroundColor;
 
@@ -24,6 +26,7 @@ class AppCircularContainer extends StatelessWidget {
     return Container(
       width: width,
       height: height,
+      margin: margin,
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(radius),

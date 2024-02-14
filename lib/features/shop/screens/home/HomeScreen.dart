@@ -1,124 +1,87 @@
-import 'package:ecommerceapp/features/shop/screens/home/widgets/MyAppHomeCategories.dart';
-import 'package:ecommerceapp/features/shop/screens/home/widgets/app_bar.dart';
-import 'package:ecommerceapp/utils/constants/ImageStrings.dart';
-import 'package:ecommerceapp/utils/constants/MyAppColor.dart';
-import 'package:ecommerceapp/utils/constants/MyAppSizes.dart';
-import 'package:flutter/material.dart';
-import '../../../../common/widgets/custum_shape/container/MyAppPrimaryHeader.dart';
-import '../../../../common/widgets/custum_shape/container/MyAppSearchBar.dart';
-import '../../../../common/widgets/text/text.dart';
+  import 'package:carousel_slider/carousel_slider.dart';
+  import 'package:ecommerceapp/MyApps.dart';
+  import 'package:ecommerceapp/common/widgets/custum_shape/container/AppCircularContainer.dart';
+  import 'package:ecommerceapp/features/shop/screens/home/widgets/MyAppHomeCategories.dart';
+  import 'package:ecommerceapp/features/shop/screens/home/widgets/app_bar.dart';
+import 'package:ecommerceapp/features/shop/screens/home/widgets/home_slider.dart';
+  import 'package:ecommerceapp/utils/constants/ImageStrings.dart';
+  import 'package:ecommerceapp/utils/constants/MyAppColor.dart';
+  import 'package:ecommerceapp/utils/constants/MyAppSizes.dart';
+  import 'package:flutter/material.dart';
+  import '../../../../common/widgets/custum_shape/container/MyAppPrimaryHeader.dart';
+  import '../../../../common/widgets/custum_shape/container/MyAppSearchBar.dart';
+  import '../../../../common/widgets/images/round_image.dart';
+  import '../../../../common/widgets/text/text.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  class HomeScreen extends StatelessWidget {
+    const HomeScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return  const Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            MyAppPrimaryHeaderContainer(
-              child: Column(
-                children: [
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const MyAppPrimaryHeaderContainer(
+                child: Column(
+                  children: [
+                    ///appbar
 
-                  ///appbar
+                    app_bar(),
 
-                  app_bar(),
+                    SizedBox(
+                      height: MyAppSizes.spaceBtwSections,
+                    ),
 
+                    ///search bar
 
-                  SizedBox(height: MyAppSizes.spaceBtwSections,),
+                    MyAppSearchBar(
+                      text: 'Search in store',
+                    ),
+                    SizedBox(
+                      height: MyAppSizes.spaceBtwSections,
+                    ),
 
-                  ///search bar
+                    /// categories
 
-                  MyAppSearchBar(text: 'Search in store',),
-                  SizedBox(height: MyAppSizes.spaceBtwSections,),
+                    Padding(
+                      padding: EdgeInsets.only(left: MyAppSizes.defaultSpace),
+                      child: Column(
+                        children: [
+                          MyAppSectionHeading(
+                            title: 'Popular Categories',
+                            showActionButtion: false,
+                            textColor: MyAppColors.white,
+                          ),
+                          SizedBox(
+                            height: MyAppSizes.spaceBtwItems,
+                          ),
 
-                  /// categories
-                  
-                  Padding(padding: EdgeInsets.only(left: MyAppSizes.defaultSpace) ,child: Column(children: [
+                          MyAppHomeCategories(),
 
-                    MyAppSectionHeading(
-                      title: 'Popular Categories',
-                      showActionButtion: false, textColor: MyAppColors.white,),
-                    SizedBox(height: MyAppSizes.spaceBtwItems,),
-
-
-                    MyAppHomeCategories(),
-
-                    /// body
-
-
-
-                  ],),)
-                ],
+                          /// body
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.all(MyAppSizes.defaultSpace),
+                child: HomeSlider(
 
-            Padding(
-              padding: EdgeInsets.all(MyAppSizes.defaultSpace),
-
-
-              child: MyAppRoundedImage(imageUrl: MyAppImages.promoBanner3),
-            ),
-
-          ],
+                    banners: [
+                      MyAppImages.promoBanner3,
+                      MyAppImages.promoBanner2,
+                      MyAppImages.promoBanner3,
+                      MyAppImages.promoBanner3,]
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    }
   }
-}
-
-class MyAppRoundedImage extends StatelessWidget {
-  const MyAppRoundedImage({
-    super.key,
-    this.width = 150,
-    this.height = 158,
-    required this.imageUrl,
-     this.applyImageRadius = false,
-    this.boxBorders, 
-     this.backGroundColor =MyAppColors.white,
-    this.boxFit,
-    this.padding,
-     this.isNetworkImage = false,
-    this.onPressed, 
-     this.borderRadius =MyAppSizes.md,
-  });
-
-  final double? width , height;
-  final String imageUrl;
-  final bool applyImageRadius;
-  final BoxBorder? boxBorders;
-  final Color backGroundColor;
-  final BoxFit? boxFit;
-  final EdgeInsetsGeometry? padding;
-  final bool isNetworkImage;
-  final VoidCallback? onPressed;
-  final double borderRadius;
-
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPressed,
-      child: Container(
-        width: width,
-        height: height,
-        padding: padding,
-        decoration: BoxDecoration(
-          border: boxBorders,
-            color: backGroundColor,
-            borderRadius: BorderRadius.circular(borderRadius)
-
-        ),
-        child: ClipRRect(
-            borderRadius: applyImageRadius ? BorderRadius.circular(MyAppSizes.md) :BorderRadius.zero,
-            child:  Image(image: isNetworkImage ? NetworkImage(imageUrl) : AssetImage(imageUrl)  as ImageProvider, fit: BoxFit.contain,)),
-      ),
-    );
-  }
-}
-
-
-
 
