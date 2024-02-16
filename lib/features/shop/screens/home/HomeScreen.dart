@@ -1,6 +1,7 @@
   import 'package:carousel_slider/carousel_slider.dart';
   import 'package:ecommerceapp/MyApps.dart';
-  import 'package:ecommerceapp/common/widgets/custum_shape/container/AppCircularContainer.dart';
+  import 'package:ecommerceapp/common/widgets/custum_shape/container/MyAppCircularContainer.dart';
+import 'package:ecommerceapp/common/widgets/product/product_carts/product_card_vertical.dart';
   import 'package:ecommerceapp/features/shop/screens/home/widgets/MyAppHomeCategories.dart';
   import 'package:ecommerceapp/features/shop/screens/home/widgets/app_bar.dart';
 import 'package:ecommerceapp/features/shop/screens/home/widgets/home_slider.dart';
@@ -18,12 +19,12 @@ import 'package:ecommerceapp/features/shop/screens/home/widgets/home_slider.dart
 
     @override
     Widget build(BuildContext context) {
-      return Scaffold(
+      return const Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const MyAppPrimaryHeaderContainer(
+              MyAppPrimaryHeaderContainer(
                 child: Column(
                   children: [
                     ///appbar
@@ -31,7 +32,7 @@ import 'package:ecommerceapp/features/shop/screens/home/widgets/home_slider.dart
                     app_bar(),
 
                     SizedBox(
-                      height: MyAppSizes.spaceBtwSections,
+                      height: MyAppSizes.spaceBtwItems,
                     ),
 
                     ///search bar
@@ -40,17 +41,18 @@ import 'package:ecommerceapp/features/shop/screens/home/widgets/home_slider.dart
                       text: 'Search in store',
                     ),
                     SizedBox(
-                      height: MyAppSizes.spaceBtwSections,
+                      height: MyAppSizes.defaultSpace1,
                     ),
 
                     /// categories
 
                     Padding(
-                      padding: EdgeInsets.only(left: MyAppSizes.defaultSpace),
+                      padding:  EdgeInsets.only(left: MyAppSizes.defaultSpace),
                       child: Column(
                         children: [
                           MyAppSectionHeading(
                             title: 'Popular Categories',
+
                             showActionButtion: false,
                             textColor: MyAppColors.white,
                           ),
@@ -67,17 +69,28 @@ import 'package:ecommerceapp/features/shop/screens/home/widgets/home_slider.dart
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(MyAppSizes.defaultSpace),
-                child: HomeSlider(
 
-                    banners: [
-                      MyAppImages.promoBanner3,
-                      MyAppImages.promoBanner2,
-                      MyAppImages.promoBanner3,
-                      MyAppImages.promoBanner3,]
-                ),
+
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child:  Column(
+                  children: [
+                    HomeSlider(
+
+                        banners: [
+                          MyAppImages.promoBanner3,
+                          MyAppImages.promoBanner2,
+                          MyAppImages.promoBanner3,
+                          MyAppImages.promoBanner1,]
+                    ),
+                    SizedBox(
+                      height: MyAppSizes.spaceBtwItems,
+                    ),
+                    AppProductVertical(),
+                  ],
+                )
               ),
+
             ],
           ),
         ),

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import '../../../../utils/constants/MyAppColor.dart';
 
-class AppCircularContainer extends StatelessWidget {
-  const AppCircularContainer({
+class MyAppCircularContainer extends StatelessWidget {
+  const MyAppCircularContainer({
     super.key,
     this.width = 400,
     this.height =400,

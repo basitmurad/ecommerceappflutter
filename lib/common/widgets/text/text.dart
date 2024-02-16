@@ -19,6 +19,7 @@ class MyAppSectionHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+
       children: [
         Text('Popular Categories ' , style: Theme.of(context).textTheme.headlineSmall!.apply(color: textColor), maxLines: 1,overflow: TextOverflow.ellipsis,),
 

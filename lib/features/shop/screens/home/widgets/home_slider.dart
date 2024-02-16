@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../common/widgets/custum_shape/container/AppCircularContainer.dart';
+import '../../../../../common/widgets/custum_shape/container/MyAppCircularContainer.dart';
 import '../../../../../common/widgets/images/round_image.dart';
 import '../../../../../utils/constants/ImageStrings.dart';
 import '../../../../../utils/constants/MyAppSizes.dart';
@@ -27,7 +27,7 @@ class HomeSlider extends StatelessWidget {
         CarouselSlider(
 
 
-          items: banners.map((url) =>  MyAppRoundedImage(imageUrl: url)).toList(),
+          items: banners.map((url) =>  MyAppRoundedImage(imageUrl: url  )).toList(),
           options: CarouselOptions(viewportFraction: 1,
             onPageChanged:(index, _)=>controller.updatePageIdicator(index)
           ),
@@ -43,7 +43,7 @@ class HomeSlider extends StatelessWidget {
             
               children: [
                 for (int a = 0; a < banners.length; a++)
-                   AppCircularContainer(
+                   MyAppCircularContainer(
                     width: 20,
                     height: 4,
                     margin: const EdgeInsets.only(right: 10),
