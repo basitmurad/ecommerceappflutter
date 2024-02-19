@@ -94,28 +94,33 @@ class AppProductVertical extends StatelessWidget {
                       const Icon(Iconsax.verify5,color: MyAppColors.primary ,size: MyAppSizes.iconXs,)
                     ],
                   ),
-                  // Spacer(),
-      
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      MyAppProductPriceText(price: '35.90',),
-                      Container(
-                        decoration:  const BoxDecoration(
-                          color: MyAppColors.dark ,
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(MyAppSizes.cardRadiusMd),
-                              bottomRight:Radius.circular(MyAppSizes.productImageRadius) )
-                        ),
-                        child: const SizedBox(
-      
-                            width: MyAppSizes.iconLg*1.2,
-                            height: MyAppSizes.iconLg*1.2,
-                            child: Center(child: Icon(Iconsax.add ,color: MyAppColors.white ,))),
-                      )
-                    ],
-                  )
+
+
                 ],
               ),
+            ),
+            const Spacer(),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: MyAppSizes.sm),
+                  child: MyAppProductPriceText(price: '35.90',),
+                ),
+                Container(
+                  decoration:  const BoxDecoration(
+                      color: MyAppColors.dark ,
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(MyAppSizes.cardRadiusMd),
+                          bottomRight:Radius.circular(MyAppSizes.productImageRadius) )
+                  ),
+                  child: const SizedBox(
+
+                      width: MyAppSizes.iconLg*1.2,
+                      height: MyAppSizes.iconLg*1.2,
+                      child: Center(child: Icon(Iconsax.add ,color: MyAppColors.white ,))),
+                )
+              ],
             )
       
             ///detail

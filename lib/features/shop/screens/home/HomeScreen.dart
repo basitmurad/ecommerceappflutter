@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const MyAppPrimaryHeaderContainer(
+             MyAppPrimaryHeaderContainer(
               child: Column(
                 children: [
                   ///appbar
@@ -52,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                     child:  Column(
                       children: [
                         MyAppSectionHeading(
-                          title: 'Popular Categories',
+                          title: 'Popular product',onPressed: (){},
                           showActionButtion: false,
                           textColor: MyAppColors.white,
                         ),

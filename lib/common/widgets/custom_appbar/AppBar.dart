@@ -9,9 +9,9 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar(
       {super.key,
       this.title,
-       this.showBackArrow = false,
+      this.showBackArrow = false,
       this.leadingIcon,
-       this.actions,
+      this.actions,
       this.onLeadingPressed});
 
   final Widget? title;
@@ -27,15 +27,13 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: EdgeInsets.symmetric(horizontal: MyAppSizes.md),
       child: AppBar(
         automaticallyImplyLeading: false,
-        leading:
-        showBackArrow
+        leading: showBackArrow
             ? IconButton(
                 onPressed: () => Get.back, icon: Icon(Iconsax.arrow_left))
             : leadingIcon != null
                 ? IconButton(
                     onPressed: onLeadingPressed, icon: Icon(leadingIcon))
                 : null,
-
         title: title,
         actions: actions,
       ),
