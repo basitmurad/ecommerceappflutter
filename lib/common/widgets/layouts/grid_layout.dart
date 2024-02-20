@@ -5,11 +5,14 @@ import '../product/product_carts/product_card_vertical.dart';
 
 class MyAppGridLayout extends StatelessWidget {
   const MyAppGridLayout({
-    super.key, required this.itemCount, required this.itemBuilder,
+    super.key,
+    required this.itemCount,
+    required this.itemBuilder,
+    this.mainAxisExtent= 288
   });
 
   final int itemCount;
-  final double? mainAxisExtent = 288;
+  final double? mainAxisExtent ;
   final Widget? Function(BuildContext ,int) itemBuilder;
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class MyAppGridLayout extends StatelessWidget {
           mainAxisSpacing: MyAppSizes.gridViewSpacing,
           crossAxisSpacing: MyAppSizes.gridViewSpacing,
           mainAxisExtent: mainAxisExtent),
-      itemBuilder: (_, index) => const AppProductVertical(),
+      itemBuilder: itemBuilder
     );
   }
 }

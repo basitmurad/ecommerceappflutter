@@ -13,8 +13,8 @@ class AppCircularImage extends StatelessWidget {
      this.isNetworkImage = false,
     this.backgroundColor,
     this.overlayColor,
-     this.width = 46,
-     this.height = 46,
+     this.width = 56,
+     this.height = 56,
      this.padding = MyAppSizes.sm,
   });
 

@@ -1,6 +1,7 @@
 import 'package:ecommerceapp/common/styles/MyAppShadowStyle.dart';
 import 'package:ecommerceapp/common/widgets/custum_shape/container/rounded_container.dart';
 import 'package:ecommerceapp/common/widgets/images/round_image.dart';
+import 'package:ecommerceapp/common/widgets/text/brand_title_withIcon.dart';
 import 'package:ecommerceapp/common/widgets/text/product_price_text.dart';
 import 'package:ecommerceapp/common/widgets/text/product_title_text.dart';
 import 'package:ecommerceapp/utils/constants/ImageStrings.dart';
@@ -11,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../icon/app_circular_icon.dart';
+import '../../text/brand_title_text.dart';
 
 class AppProductVertical extends StatelessWidget {
   const AppProductVertical({super.key});
@@ -74,26 +76,20 @@ class AppProductVertical extends StatelessWidget {
             const SizedBox(
               height: MyAppSizes.spaceBtwItems / 2,
             ),
-             Padding(
-              padding: const EdgeInsets.only(left: MyAppSizes.sm),
+             const Padding(
+              padding: EdgeInsets.only(left: MyAppSizes.sm),
       
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
 
-                  const MyAppProductTitleText(title: 'Green Nike Air Shoes',smallSize: true,),
+                  MyAppProductTitleText(title: 'Green Nike Air Shoes',smallSize: true,),
       
-                  const SizedBox(
+                  SizedBox(
                     height: MyAppSizes.spaceBtwItems / 2,
                   ),
       
-                  Row(
-                    children: [
-                      Text('Nike' ,overflow: TextOverflow.ellipsis,style: Theme.of(context).textTheme.labelMedium,),
-                      const SizedBox(width: MyAppSizes.xs,),
-                      const Icon(Iconsax.verify5,color: MyAppColors.primary ,size: MyAppSizes.iconXs,)
-                    ],
-                  ),
+                  MyAppBrandIconText(title: 'Nike',),
 
 
                 ],
@@ -130,3 +126,4 @@ class AppProductVertical extends StatelessWidget {
     );
   }
 }
+

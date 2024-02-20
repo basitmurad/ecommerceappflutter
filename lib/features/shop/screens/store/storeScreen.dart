@@ -1,15 +1,18 @@
 import 'package:ecommerceapp/common/widgets/custom_appbar/AppBar.dart';
 import 'package:ecommerceapp/common/widgets/custum_shape/container/MyAppSearchBar.dart';
 import 'package:ecommerceapp/common/widgets/custum_shape/container/rounded_container.dart';
+import 'package:ecommerceapp/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerceapp/common/widgets/product/MyAppCartCounter.dart';
+import 'package:ecommerceapp/common/widgets/text/brand_title_withIcon.dart';
 import 'package:ecommerceapp/common/widgets/text/text.dart';
 import 'package:ecommerceapp/utils/constants/ImageStrings.dart';
 import 'package:ecommerceapp/utils/constants/MyAppColor.dart';
 import 'package:ecommerceapp/utils/constants/MyAppSizes.dart';
+import 'package:ecommerceapp/utils/constants/MyEnums.dart';
 import 'package:ecommerceapp/utils/helpers/MyAppHelper.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../common/widgets/images/app_circular_images.dart';
+import '../../../../common/widgets/images/circular_image_new.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -57,7 +60,6 @@ class StoreScreen extends StatelessWidget {
                       padding: EdgeInsets.zero,
                     ),
                     const SizedBox(
-
                       height: MyAppSizes.spaceBtwSections,
                     ),
 
@@ -65,43 +67,72 @@ class StoreScreen extends StatelessWidget {
 
                     MyAppSectionHeading(
                         title: 'Featured Brands', onPressed: () {}),
-                      MyAppRoundedContainer(
-                      padding: EdgeInsets.all(MyAppSizes.sm,),
-                      showBorder: true,
-                      backgroundColor: Colors.white,
-                      child: Expanded(
-                        child: Row(
 
-                          children: [
-                            AppCircularImage(
-                              width: 10,
-                              height: 10,
-                            )
-                        
-                          ],
-                        ),
-                      ),
-                    ),
+                    MyAppGridLayout(
+                        itemCount: 4,
+                        mainAxisExtent: 80,
+                        itemBuilder: (_, index) {
+                          return GestureDetector(
+                            onTap: () {},
+                            child: MyAppRoundedContainer(
+                              padding: const EdgeInsets.all(
+                                MyAppSizes.sm,
+                              ),
+                              showBorder: true,
+                              backgroundColor: Colors.transparent,
+                              child: Expanded(
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Flexible(
+                                          child: ImageW(
+                                            image: MyAppImages.cosmeticsIcon,
+                                            isNetworkImage: false,
+                                            backgroundColor: Colors.black,
+                                            overlayColor:
+                                                MyAppHelperFunctions.isDarkMode(
+                                                        context)
+                                                    ? MyAppColors.black
+                                                    : MyAppColors.dark,
+                                          ),
+                                        ),
 
-                    // MyAppRoundedContainer(
-                    //   padding: EdgeInsets.all(8.0),
-                    //   showBorder: true,
-                    //     backgroundColor: Colors.transparent,
-                    //   child: Row(
-                    //     children: [
-                    //       AppCircularImage(
-                    //         width: 100,
-                    //         height: 100,
-                    //         isNetworkImage: false,
-                    //         image: MyAppImages.cosmeticsIcon,
-                    //         backgroundColor: Colors.black,
-                    //         overlayColor: MyAppHelperFunctions.isDarkMode(context) ? MyAppColors.white : MyAppColors.black  ,
-                    //       ),
-                    //
-                    //       // SizedBox(width: MyAppSizes.spaceBtwSections/2,)
-                    //     ],
-                    //   ),
-                    // )
+                                        const SizedBox(width: MyAppSizes.spaceBtwItems/2),
+                                        Expanded(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              const MyAppBrandIconText(
+                                                title: 'Nike',
+                                                brandTextSize: TextSizes.medium,
+                                              ),
+                                              Text(
+                                                '256 products',
+                                                overflow: TextOverflow.ellipsis,
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .labelSmall,
+                                              )
+                                            ],
+                                          ),
+                                        )
+                                        // AppCircularImage(
+                                        //   isNetworkImage: false,
+                                        //   image: MyAppImages.cosmeticsIcon,
+                                        //   backgroundColor: Colors.transparent,
+                                        //   overlayColor: MyAppHelperFunctions.isDarkMode(context) ?  MyAppColors.black : MyAppColors.dark,
+                                        // )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        })
                   ],
                 ),
               ),
@@ -113,4 +144,3 @@ class StoreScreen extends StatelessWidget {
     );
   }
 }
-
