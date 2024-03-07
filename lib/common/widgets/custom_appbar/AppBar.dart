@@ -12,7 +12,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.showBackArrow = false,
       this.leadingIcon,
       this.actions,
-      this.onLeadingPressed});
+      this.onLeadingPressed, });
 
   final Widget? title;
   final bool showBackArrow;
