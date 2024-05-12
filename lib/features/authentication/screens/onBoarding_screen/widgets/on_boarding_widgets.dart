@@ -16,7 +16,6 @@ class OnboardingSkip extends StatelessWidget {
     return Positioned(
         top: MyDevicesUtils.getAppBarHeight(), right: MyAppSizes.defaultSpace,
         child: TextButton(onPressed: (){
-          OnBoardingController.instance.skipPage();
 
         }, child: Text('Skip', style: Theme.of(context).textTheme.titleMedium,) ,));
   }
@@ -43,7 +42,7 @@ class onBoardingPages extends StatelessWidget {
               height: MyAppHelperFunctions.screenWidth() * 0.8,
               width: MyAppHelperFunctions.screenWidth() * 0.6,
               image: AssetImage(imagePath)),
-          SizedBox(
+          const SizedBox(
             height: MyAppSizes.spaceBtwItems,
           ),
           Text(

@@ -21,7 +21,8 @@ class MyAppLoginHeader extends StatelessWidget {
         Image(
           height: 150,
           image: AssetImage(
-              dark ? MyAppImages.lightAppLogo : MyAppImages.darkAppLogo),
+              dark ? MyAppImages.lightAppLogo : MyAppImages.
+              darkAppLogo),
         ),
         Text(
           MyAppString.loginTitle,

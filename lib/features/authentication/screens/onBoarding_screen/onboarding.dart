@@ -1,7 +1,6 @@
 import 'package:ecommerceapp/features/authentication/controllers/onboarding_controller.dart';
 import 'package:ecommerceapp/utils/constants/ImageStrings.dart';
 import 'package:ecommerceapp/utils/constants/MyAppColor.dart';
-import 'package:ecommerceapp/utils/constants/MyAppSizes.dart';
 
 import 'package:ecommerceapp/utils/constants/MyAppTextStrings.dart';
 import 'package:ecommerceapp/utils/device/MyDevicesUtils.dart';
